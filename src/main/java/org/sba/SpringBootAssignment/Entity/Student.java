@@ -1,4 +1,4 @@
-package org.sba.SpringBootAssignment.Model;
+package org.sba.SpringBootAssignment.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 @Entity
+@Table(name = "students")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -37,16 +38,8 @@ public class Student {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String email;
 
-    @Column(name = "password", nullable = false)
-    @JdbcTypeCode(SqlTypes.VARCHAR)
-    private String password;
-
-    @OneToOne
-    @JoinColumn(name = "phone_numbers_id")
-    private Phone phoneNumbers;
-
-    @OneToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
+    @Column(name = "phone_number", nullable = false)
+    @JdbcTypeCode(SqlTypes.INTEGER)
+    private int phoneNumber;
 
 }
