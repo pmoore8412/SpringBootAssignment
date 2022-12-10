@@ -39,7 +39,7 @@ public class Student {
     private String email;
 
     @Column(name = "phone_number", nullable = false)
-    @JdbcTypeCode(SqlTypes.INTEGER)
-    private int phoneNumber;
+    @JdbcTypeCode(SqlTypes.BIGINT)
+    private long phoneNumber;
 
 }
